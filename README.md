@@ -8,3 +8,5 @@ MP91 - https://github.com/Adarsh0047/django/tree/MP91
 MP92 - https://github.com/Adarsh0047/django/tree/MP92
 
 MP94 - https://github.com/Adarsh0047/django/tree/MP94
+
+MP95 - https://github.com/Adarsh0047/django/tree/MP95/MP95
