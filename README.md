@@ -12,3 +12,5 @@ MP94 - https://github.com/Adarsh0047/django/tree/MP94
 MP95 - https://github.com/Adarsh0047/django/tree/MP95/MP95
 
 MP96 - https://github.com/Adarsh0047/django/tree/MP95/MP96
+
+MP98 - https://github.com/Adarsh0047/django/tree/MP95/MP98
