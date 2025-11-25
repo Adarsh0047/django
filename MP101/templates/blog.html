@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>{{ blog.title }}</h2>
+
+    {% for post in blog_posts %}
+        <div class="card">
+            <header><h3>{{ post.title }}</h3></header>
+            <p>{{ post.date_added|date:"DATE_FORMAT" }}</p>
+            <p>{{ post.body|truncatewords:10 }}</p>
+        </div>
+    
+    {% empty %}
+    <h3>No Blog Posts found for the blog {{ blog.title }}.</h3>
+    {% endfor %}
+{% endblock content %}

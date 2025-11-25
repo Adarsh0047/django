@@ -32,3 +32,16 @@ all_related_blogposts = blog_obj.blogpost_set.all()
 
 # Get the most recent blog post for a specific blog
 most_recent_post = blog_obj.blogpost_set.order_by('-date_added')[0]
+
+# Get All Blogs
+blogs = Blog.objects.all()
+blogs
+
+# Check the id and title for each blog
+for blog in blogs:
+    print(blog.title, blog.id)
+
+# Get all blogposts associated to a id
+blog = Blog.objects.get(id=1)
+blog_posts = blog.blogpost_set.all()
+
