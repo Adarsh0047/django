@@ -24,11 +24,21 @@ def blog(request, blog_id):
     }
     return render(request, "blog.html", context)
 
+def post(request, post_id):
+    post = BlogPost.objects.get(id=post_id)
+    blog = post.blog
+    context = {
+        "post": post,
+        "blog": blog
+    }
+    return render(request, "post.html", context)
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", index, name="index"),
     path("blogs/", blogs, name="blogs"),
-    path("blogs/<int:blog_id>", blog, name="blog")
+    path("blogs/<int:blog_id>", blog, name="blog"),
+    path("posts/<int:post_id>", post, name="post")
 ]
 
 application = WSGIHandler()
