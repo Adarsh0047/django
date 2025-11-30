@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "blogs/base.html" %}
 
 {% block content %}
     <h2>{{ blog.title }}</h2>
@@ -7,7 +7,7 @@
         <div class="card">
             <header>
                 <h3>
-                    <a href="{% url 'post' post.id %}">{{ post.title }}</a>
+                    <a href="{% url 'blogs:post' post.id %}">{{ post.title }}</a>
                 </h3>
             </header>
             <p>{{ post.date_added|date:"DATE_FORMAT" }}</p>
