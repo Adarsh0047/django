@@ -1,8 +1,7 @@
-# Blog URL - https://www.mostlypython.com/django-from-first-principles-part-13/
+# Blog URL - https://www.mostlypython.com/django-from-first-principles-part-14/
 
 Changes done:
-1. Added new `accounts` app.
-2. Added new `accounts/urls.py` app to handle user authentication.
-3. Added new template `accounts/templates/registration/login.html` for login page.
-4. Made changes in the `blogs/templates/blogs/base.html` nav bar to include the login, greeting and logout.
-5. Added csrf middleware in `settings.py`, added `accounts` app in the `INSTALLED_APPS` var and also set the `LOGIN_REDIRECT_URL` and `LOGOUT_REDIRECT_URL` vars.
+1. Added new `registration/` url in `urlpatterns` in `accounts/urls.py`.
+2. Added new `register` view in `views.py` to handle registration.
+3. Added new template `accounts/templates/registration/register.html` to display the registration form.
+4. Added new `Register` button in `blogs/templates/blogs/base.html` to enable user registration.
