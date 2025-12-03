@@ -1,11 +1,17 @@
 import os
 
+from faker import Faker
+faker = Faker()
+
+
 import django
 from django.core.management import call_command
+import django.contrib.auth
 
 # Load Settings
 os.environ["DJANGO_SETTINGS_MODULE"] = "settings"
 django.setup()
+
 
 # Flush Current Data
 call_command("flush", "--noinput")
@@ -20,6 +26,14 @@ cmd += " --noinput"
 
 cmd_parts = cmd.split()
 call_command(*cmd_parts)
+
+
+# Create a couple of users
+for i in range(10):
+    fake_user_name = faker.name()
+    fake_pwd = faker.password(10)
+    User = django.contrib.auth.get_user_model()
+    user = User.objects.create(username=fake_user_name, password=fake_pwd)
 
 from model_factories import BlogFactory, BlogPostFactory
 
