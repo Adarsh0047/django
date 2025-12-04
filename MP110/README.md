@@ -1,9 +1,8 @@
-# Blog URL - https://www.mostlypython.com/django-from-first-principles-part-15/
+# Blog URL - https://www.mostlypython.com/django-from-first-principles-part-16/
 
 Changes done:
-1. Added new `owner` foreign field for the blog model in `blogs/models.py`.
-2. Made changes in the `generate_sample_data.py` to create random users.
-3. Made changes in `model_factories.py` to select random user for each blog.
-4. Made change in `blogs/templates/blogs/blog.html` to display the `blog.owner.username`.
-5. Made change in `blogs/templates/blogs/blogs.html` to display the `blog.owner.username`.
-6. Made change in `blog/templates/blogs/post.html` to display the `blog.owner.username`.
+1. Added new `blogs/forms.py` with `BlogForm` to allow users to create a new blog.
+2. Added new `new_blogs` url pattern in `blogs/urls.py`.
+3. Added new view function for creating new blogs and added decorator to protect the page from anonymous users in `blogs/views.py`.
+4. Created new `blogs/tempates/blogs/new_blog.html` for allowing users to login.
+5. Added new `<a>` tag in nav bar left in `blogs/templates/blogs/base.html` for allowing logged in users to create a new blog.
