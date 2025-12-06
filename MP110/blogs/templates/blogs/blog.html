@@ -18,4 +18,8 @@
     {% empty %}
     <h3>No Blog Posts found for the blog {{ blog.title }}.</h3>
     {% endfor %}
+
+    {% if blog.owner == request.user %}
+        <a class="button primary" href="{% url 'blogs:new_blog_post' blog.id %}">New Blog Post</a>
+    {% endif %}
 {% endblock content %}
