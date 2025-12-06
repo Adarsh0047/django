@@ -33,3 +33,4 @@ MP109 - https://github.com/Adarsh0047/django/tree/MP109
 
 MP110 - https://github.com/Adarsh0047/django/tree/MP110
 
+MP112 - https://github.com/Adarsh0047/django/tree/MP112

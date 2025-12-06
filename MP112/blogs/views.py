@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Blog, BlogPost
-from .forms import BlogForm
+from .forms import BlogForm, BlogPostForm
 from django.contrib.auth.decorators import login_required
 
 def index(request):
@@ -45,3 +45,24 @@ def new_blog(request):
         "form": form
     }
     return render(request, "blogs/new_blog.html", context=context)
+
+@login_required
+def new_blog_post(request, blog_id):
+    blog = Blog.objects.get(id=blog_id)
+
+    if request.user != blog.owner:
+        return redirect("blogs:blogs")
+    
+    if request.method != "POST":
+        form = BlogPostForm()
+    else:
+        form = BlogPostForm(data=request.POST)
+        if form.is_valid():
+            new_blog_post = form.save(commit=False)
+            new_blog_post.blog = blog
+            new_blog_post.save()
+            return redirect("blogs:blog", blog_id)
+    context = {
+        "form": form, "blog": blog
+    }
+    return render(request, "blogs/new_post.html", context=context)
