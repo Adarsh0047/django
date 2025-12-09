@@ -9,7 +9,7 @@ from django.core.management import call_command
 import django.contrib.auth
 
 # Load Settings
-os.environ["DJANGO_SETTINGS_MODULE"] = "settings"
+os.environ["DJANGO_SETTINGS_MODULE"] = "blogmaker_lite.settings"
 django.setup()
 
 
