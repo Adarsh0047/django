@@ -1,8 +1,6 @@
-# Blog URL - https://www.mostlypython.com/django-from-first-principles-part-17/
+# Blog URL - https://www.mostlypython.com/django-from-first-principles-part-18/
 
 Changes done:
-1. Added `BlogPostForm` in `blogs/forms.py` for creating a form for blog posts.
-2. Added `new_posts/<int:blog_id>` urlpattern in `blogs/urls.py`.
-3. Added `new_blog_post()` view function in `blogs/views.py` for creating new blogpost.
-4. Added `blogs/templates/blogs/new_post.html` template for new post.
-5. Modified `blogs/templates/blogs/blog.html` to display new blog post button.
+1. Created a new `blogmaker_lite` folder and created `settings.py`, `urls.py`, `wsgi.py` files in it.
+2. Modified the `DJANGO_SETTINGS_MODULE` variable in `manage.py` file to use the new settings.
+3. Modified the `DJANGO_SETTINGS_MODULE` variable in `generate_sample_data.py` file to use the new settings.
